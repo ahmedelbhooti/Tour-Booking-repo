@@ -144,4 +144,56 @@ Deleting a review
 
 To delete a review, you must send a DELETE request to the / route with the ID of the review in the URL.
 
+The following is an explanation of all the APIs and routes in bookingRoutes:
+
+GET /checkout-session/:tourId: Returns a Stripe Checkout Session for the tour with the given ID.
+GET /: Returns a list of all bookings. This route is only accessible to logged-in users with the admin or lead-guide role.
+POST /: Creates a new booking. This route is only accessible to logged-in users.
+GET /:id: Returns the booking with the given ID. This route is only accessible to logged-in users.
+PATCH /:id: Updates the booking with the given ID. This route is only accessible to logged-in users with the admin or lead-guide role.
+DELETE /:id: Deletes the booking with the given ID. This route is only accessible to logged-in users with the admin or lead-guide role.
+The mergeParams: true option in the router constructor tells Express to merge the parameters from the parent router into the child router. This means that the tourId parameter will be available in all of the routes in this router.
+
+The authController.protect middleware is used to protect all of the routes in this router. This means that users will need to be logged in to access any of the routes.
+
+The authController.restrictTo() middleware is used to restrict access to certain routes to users with specific roles. For example, the GET / and /checkout-session/:tourId routes are only accessible to logged-in users. The POST /, PATCH /:id, and DELETE /:id routes are only accessible to logged-in users with the admin or lead-guide role.
+
+The bookingController.getCheckoutSession() function is responsible for returning a Stripe Checkout Session for the tour with the given ID. This allows users to book a tour without having to create an account or enter any personal information.
+
+The bookingController.getAllBookings(), bookingController.getBooking(), bookingController.createBooking(), bookingController.updateBooking(), and bookingController.deleteBooking() functions are responsible for handling requests to the corresponding routes.
+
+
+Booking API
+
+This API provides the ability to create, read, update, and delete bookings. All routes in this API are protected, so users must be logged in to access them.
+
+Creating a new booking
+
+To create a new booking, you must send a POST request to the / route with the following parameters:
+
+tourId: The ID of the tour to book.
+userId: The ID of the user making the booking.
+startDate: The start date of the booking.
+endDate: The end date of the booking.
+numberOfPeople: The number of people in the booking.
+Getting a checkout session for a tour
+
+To get a checkout session for a tour, you must send a GET request to the /checkout-session/:tourId route with the ID of the tour in the URL.
+
+Getting all bookings
+
+To get all bookings, you must send a GET request to the / route. This route is only accessible to logged-in users with the admin or lead-guide role.
+
+Getting a specific booking
+
+To get a specific booking, you must send a GET request to the / route with the ID of the booking in the URL.
+
+Updating a booking
+
+To update a booking, you must send a PATCH request to the / route with the ID of the booking in the URL and the updated parameters.
+
+Deleting a booking
+
+To delete a booking, you must send a DELETE request to the / route with the ID of the booking in the URL.
+
 link: https://tour-booking-ulhx.onrender.com
