@@ -101,4 +101,47 @@ Expected output:
   "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImlhdCI6MTU4NjI2MjQ5MywiZXhwIjoxNTg2MzQ4ODkzfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"
 }
 
+The following is an explanation of all the APIs and routes in reviewRoutes:
+
+GET /: Returns a list of all reviews for the current tour.
+POST /: Creates a new review for the current tour. This route is only accessible to logged-in users.
+GET /:id: Returns the review with the given ID.
+PATCH /:id: Updates the review with the given ID. This route is only accessible to logged-in users with the admin or user role.
+DELETE /:id: Deletes the review with the given ID. This route is only accessible to logged-in users with the admin or user role.
+The mergeParams: true option in the router constructor tells Express to merge the parameters from the parent router into the child router. This means that the tourId parameter will be available in all of the routes in this router.
+
+The authController.protect middleware is used to protect all of the routes in this router. This means that users will need to be logged in to access any of the routes.
+
+The authController.restrictTo() middleware is used to restrict access to certain routes to users with specific roles. For example, the POST / route is only accessible to logged-in users with the user role.
+
+The reviewController.setTourAndUserIDs() middleware is used to set the tourId and userId on the request object. This is necessary for creating a new review.
+
+The reviewController.getAllReviews(), reviewController.getOneReview(), reviewController.updateReview(), and reviewController.deleteReview() functions are responsible for handling requests to the corresponding routes.
+
+Review API
+
+This API provides the ability to create, read, update, and delete reviews for tours. All routes in this API are protected, so users must be logged in to access them.
+
+Creating a new review
+
+To create a new review, you must send a POST request to the / route with the following parameters:
+
+rating: The rating of the review (1-5 stars).
+comment: The comment for the review.
+Getting all reviews for a tour
+
+To get all reviews for a tour, you must send a GET request to the / route.
+
+Getting a specific review
+
+To get a specific review, you must send a GET request to the / route with the ID of the review in the URL.
+
+Updating a review
+
+To update a review, you must send a PATCH request to the / route with the ID of the review in the URL and the updated parameters.
+
+Deleting a review
+
+To delete a review, you must send a DELETE request to the / route with the ID of the review in the URL.
+
 link: https://tour-booking-ulhx.onrender.com
