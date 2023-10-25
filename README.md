@@ -2,6 +2,7 @@
 
 Built using modern technologies: node.js, express.js, mongoDB, mongoDB Atlas, Mongoose, JWT, PUG template, ParcelJS, Stripe, Postman, Mailtrap & Gmail and Mapbox.
 ![1](https://github.com/ahmedelbhooti/Tour-Booking-repo/assets/102395081/e4fce365-71cd-4158-8476-2be3fa10073e)
+![2](https://github.com/ahmedelbhooti/Tour-Booking-repo/assets/102395081/fbb83589-bbc8-42c7-8410-1e478e374b0d)
 The following is an explanation of all APIs and routes in tourRoutes:
 
 GET /tour-stats: Returns statistics for all tours, such as the most popular tour and the average rating of all tours.
