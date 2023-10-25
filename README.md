@@ -3,16 +3,21 @@
 Built using modern technologies: node.js, express.js, mongoDB, mongoDB Atlas, Mongoose, JWT, PUG template, ParcelJS, Stripe, Postman, Mailtrap & Gmail and Mapbox.
 ![1](https://github.com/ahmedelbhooti/Tour-Booking-repo/assets/102395081/e4fce365-71cd-4158-8476-2be3fa10073e)
 
+
 Responsive Mode:
+
 ![2](https://github.com/ahmedelbhooti/Tour-Booking-repo/assets/102395081/fbb83589-bbc8-42c7-8410-1e478e374b0d)
 
 Details Page:
+
 ![3](https://github.com/ahmedelbhooti/Tour-Booking-repo/assets/102395081/ac9ed2b1-a2db-4084-8939-681af87d2eb1)
 
 Profile Page:
+
 ![4](https://github.com/ahmedelbhooti/Tour-Booking-repo/assets/102395081/02187c80-38a3-4469-a41f-0e56d6ad926c)
 
 Payment Page:
+
 ![5](https://github.com/ahmedelbhooti/Tour-Booking-repo/assets/102395081/09a148cd-d0bf-4cb6-b4fc-bc40cd613d55)
 
 
